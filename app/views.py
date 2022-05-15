@@ -4,7 +4,7 @@ import matplotlib.pyplot as plt
 import pandas as pd
 
 
-# home page
+# home page  
 def home(request):
     return render(request,"pages/home.html")
 def dashboard(request):
@@ -66,10 +66,25 @@ def file(request):
 
         #Displaying the results sorted
         # print(resultsinDataFrame.nlargest(n = 5, columns = 'Lift'))
-        print(type(resultsinDataFrame))
+        lst=list(resultsinDataFrame['Left Hand Side']) 
+        rst=list(resultsinDataFrame['Right Hand Side'])
+        llist=[]
+        rlist=[]
+        for obj in lst:
+            llist.append("".join(obj))
+        for obj in rst:
+            rlist.append("".join(obj))
+        final=[]
+        for i in range(6):
+            final.append((i+1,llist[i],rlist[i]))
+        # print(final[0][0])
+        # print(llist[0])
+        # print(lst)
         context={
-            "content":resultsinDataFrame,
-            "flag":flag
+            # "content":resultsinDataFrame,
+            "final":final,
+            "flag":flag,
+            "range":[0,1,2,3,4,5]
         }
 
         return render(request,"pages/file-input.html",context)
