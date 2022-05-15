@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css"
+    integrity="sha512-PgQMlq+nqFLV4ylk1gwUOgm6CtIIXkKwaIHp/PAIWHzig/lKZSEGKEysh0TCVbHJXCLN7WetD8TFecIky75ZfQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="../../static/style/dashboard.css">
+  <link rel="stylesheet" href="../../static/style/file-input.css">
+  <title>Upload File | Analytica</title>
+</head>
+
+<body>
+  <div class="main">
+    <div class="side-menubar">
+      <div class="logo">
+        <img src="../../static/images/logo.png" alt="logo" class="logo-img">
+      </div>
+      <div class="menu-section">
+        <ul class="menubar">
+          <li class="menu-item">
+            <a href="#">
+              <i class="fa fa-eye" id="pass-show-icon" aria-hidden="true"></i>
+              Overview
+            </a>
+          </li>
+          <li class="menu-item">
+            <a href="#">
+              <i class="fa fa-eye" id="pass-show-icon" aria-hidden="true"></i>
+              Past Data
+            </a>
+          </li>
+          <li class="menu-item">
+            <a href="#">
+              <i class="fa fa-eye" id="pass-show-icon" aria-hidden="true"></i>
+              Contacts
+            </a>
+          </li>
+          <li class="menu-item">
+            <a href="#">
+              <i class="fa fa-eye" id="pass-show-icon" aria-hidden="true"></i>
+              Expert Advice
+            </a>
+          </li>
+          <li class="menu-item">
+            <a href="#">
+              <i class="fa fa-eye" id="pass-show-icon" aria-hidden="true"></i>
+              Settings
+            </a>
+          </li>
+          <li class="menu-item">
+            <a href="#">
+              <i class="fa fa-eye" id="pass-show-icon" aria-hidden="true"></i>
+              Subscription
+            </a>
+          </li>
+        </ul>
+        <ul class="menubar">
+          <li class="menu-item">
+            <a href="/pages/dashboard.html">
+              <i class="fa fa-eye" id="pass-show-icon" aria-hidden="true"></i>
+              Go to Dashboard
+            </a>
+          </li>
+          <li class="menu-item">
+            <a href="/pages/home.html">
+              <i class="fa fa-eye" id="pass-show-icon" aria-hidden="true"></i>
+              Go to Home
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div class="upload-data-btn">
+        Upload Data
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="title-bar">
+        <div class="title-bar-1">
+          <h2>Overview</h2>
+          <div>
+            <i class="fa fa-search" aria-hidden="true"></i>
+            <i class="fa fa-bell" aria-hidden="true"></i>
+          </div>
+        </div>
+        <div class="title-bar-2">
+          <span>Radhe Shyam</span>
+          <img src="../../static/images/profile-pic.png" alt="profile">
+        </div>
+      </div>
+      <div>
+        <div class="box drag-area">
+          <div class="icon"><i class="fas fa-cloud-upload-alt"></i></div>
+          <header>Drag & Drop to Upload File</header>
+          <span>OR</span>
+          <button class="file-select-btn">Browse File</button>
+          <form action="" method="post" enctype="multipart/form-data">
+            <input type="file" id="files" name="files" multiple="multiple" hidden>
+            <button type="submit" class="drag-area-submit-btn">Start Analyzing</button>
+            {% csrf_token %}
+          </form>
+        </div>
+        <div class="box box2">
+          <!-- <p class="box2-p">Uploaded Files</p> -->
+          <div class="uploaded-files">
+          </div>
+          <div class="box3">
+            <h2 style="text-align: center;">Results</h2>
+            <table class="output_data">
+              <tr>
+                <th>Sr. no</th>
+                <th>Item</th>
+                <th>Associated Item</th>
+              </tr>
+              {% if flag == 1 %}
+                {% for obj in content %}
+                <tr>
+                  <td>dummy</td>
+                  <td>{{obj}}</td>
+                  <td>dumy</td>
+                </tr>
+                {% endfor %}
+              {% endif %}
+            </table>
+          </div>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://kit.fontawesome.com/b1d5d9d13c.js" crossorigin="anonymous"></script>
+  <script src="../../static/script/file-input.js"></script>
+</body>
+
+</html>

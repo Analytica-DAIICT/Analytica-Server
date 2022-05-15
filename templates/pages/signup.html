@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css"
+    integrity="sha512-PgQMlq+nqFLV4ylk1gwUOgm6CtIIXkKwaIHp/PAIWHzig/lKZSEGKEysh0TCVbHJXCLN7WetD8TFecIky75ZfQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="../../static/style/signup.css">
+  <title>Signup | Analytica</title>
+</head>
+
+<body>
+  <div class="main-outer">
+    <div class="main">
+      <div class="login-img">
+        <img src="../../static/images/login-bg.png" alt="background-img">
+      </div>
+
+      <div class="login-details">
+        <div class="logo">
+          <img src="../../static/images/logo.png" alt="logo" class="logo-img">
+        </div>
+
+        <h2>Create Account</h2>
+
+        <form class="login-form">
+          <div class="form-item">
+            <label>Full Name</label>
+            <input type="text" id="username" placeholder="Full name" autocomplete="off">
+          </div>
+          <div class="form-item">
+            <label>Email</label>
+            <input type="email" id="email" placeholder="Email ID" autocomplete="off">
+          </div>
+          <div class="form-item">
+            <label>Password</label>
+            <input type="password" id="password" placeholder="Enter password">
+            <i class="fa fa-eye" id="pass-show-icon" aria-hidden="true"></i>
+          </div>
+          <div class="form-item">
+            <input type="password" id="confirm-pass" placeholder="Confirm password">
+            <i class="fa fa-eye" id="pass-show-icon" aria-hidden="true"></i>
+          </div>
+          <input type="submit" value="Create Account" class="btn submit-btn">
+        </form>
+
+        <!-- <hr> -->
+        <div class="row">
+          <div class="col">
+            <hr />
+          </div>
+          <div class="col-auto">OR</div>
+          <div class="col">
+            <hr />
+          </div>
+        </div>
+
+        <button class="google-login-btn">
+          <span><img src="../../static/images/google-logo.png" class="google-logo"></span>
+          Or sign-up with Google
+        </button>
+
+        <p class="have-an-account">Already have an account? <a href="/pages/login.html">Log In</a></p>
+
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
