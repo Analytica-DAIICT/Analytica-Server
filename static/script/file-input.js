@@ -7,8 +7,10 @@ const dropArea = document.querySelector(".drag-area"),
   box2p=document.querySelector(".box2-p"),
   uplodedfiles=document.querySelector(".uploaded-files"),
   input = dropArea.querySelector("input");
+  titlerow = dropArea.querySelector(".titlerow");
 let files = [];
 submitBtn.classList.add("hidden");
+titlerow.classList.add("hidden");
 // box3.classList.add("hidden");
 // box2p.classList.remove("hidden");
 // uplodedfiles.classList.remove("hidden");
@@ -71,6 +73,7 @@ function showFile() {
 
 submitBtn.addEventListener("click", () => {
   box2p.classList.add("hidden")
+  titlerow.classList.remove("hidden")
   // uplodedfiles.classList.add("hidden")
   // box3.classList.remove("hidden");
 });

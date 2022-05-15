@@ -19,8 +19,14 @@
   width: fit-content;
   /* color: red; */
   margin: 0px 20px;
-  text-align: center;
+  text-align: left;
+  /* color: white; */
+  background-color: #a5edcc;
 }
+tr {
+  border-bottom: 1px solid #ddd;
+}
+tr:hover {background-color: #D6EEEE;}
 .side-menubar {
   width: 15%;
   height: 100%;

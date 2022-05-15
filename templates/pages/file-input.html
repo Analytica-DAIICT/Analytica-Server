@@ -111,17 +111,17 @@
           <div class="box3">
             <h2 style="text-align: center;">Results</h2>
             <table class="output_data">
-              <tr>
+              <tr class="title-row" >
                 <th>Sr. no</th>
                 <th>Item</th>
                 <th>Associated Item</th>
               </tr>
               {% if flag == 1 %}
-                {% for obj in content %}
+                {% for obj in final %}
                 <tr>
-                  <td>dummy</td>
-                  <td>{{obj}}</td>
-                  <td>dumy</td>
+                  <td>{{obj.0}}</td>
+                  <td>{{obj.1}}</td>
+                  <td>{{obj.2}}</td>
                 </tr>
                 {% endfor %}
               {% endif %}
